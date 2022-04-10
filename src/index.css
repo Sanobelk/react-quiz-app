@@ -1,0 +1,102 @@
+html{
+    padding:0;
+    margin:0;
+    width:100vw;
+    height:100vh;
+    font-family:arial;
+}
+body{
+    padding:0;
+    margin:0;
+    font-size:16pt;
+    background-color:rgb(73, 140, 255);
+    height:100%;
+    width:100%;
+}
+
+#root{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.app-container{
+    background-color:rgb(255, 246, 246);
+    border-radius:15px;
+    min-width:600px;
+    height:75%;
+    box-shadow:5px 5px 5px 5px rgba(55, 67, 100, 0.89);
+}
+
+.app-container > .content-container >.question-container > h3{
+    padding:0;
+    margin:0;
+}
+
+.content-container{
+    display:flex;
+    flex-direction:column;
+    background-color:pink;
+    width:100%;
+    height:100%;
+    justify-content:center;
+    align-items:center;
+}
+
+.content-container > div{
+    width:100%;
+    height:100%;
+}
+
+.content-container > h2{
+    margin:0;
+}
+
+.answers-container > button{
+    font-size:16pt;
+    margin-top:10px;
+    border: 1px solid rgb(73, 140, 255);
+    background-color:white;
+    padding:5px;
+    border-radius:15px;
+}
+
+.answers-container > button:hover{
+    background-color:rgb(73, 140, 255);
+    color:white;
+    cursor:pointer;
+}
+.answers-container{
+    display:flex;
+    flex-direction:column;
+}
+
+.submitButtons{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+}
+
+.submitButtons > button{
+    font-size:16pt;
+    width:45%;
+    margin:5px;
+    background-color:rgb(73,140,255);
+    border:1px solid white;
+    padding:5px;
+    color:white;
+}
+
+.submitButtons > button:hover{
+    background-color:white;
+    color:rgb(73,140,255);
+    border:1px solid lightgray;
+    cursor:pointer;
+}
+
+.errorText{
+    color:Red;
+    position:fixed;
+}
