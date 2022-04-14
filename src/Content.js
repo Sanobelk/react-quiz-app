@@ -1,32 +1,33 @@
 import React from "react";
 import {Question} from "./Question.js";
 import {Answers} from "./Answers.js";
-import {SubmitClear} from "./SubmitClear.js";
 
 function Content(props){
-    const [questionNum, setQuestionNum] = React.useState(0);
-    const [question, setQuestion] = React.useState(props.array[questionNum].question);
-    const [answers, setAnswers] = React.useState(props.array[questionNum].answer);
+    const obj = [...props.array];
+    const [count, setCount] = React.useState(1);
+    const [questionNum, setQuestionNum] = React.useState(obj[0].num); //set to 1 because question starts with 1, not 0.
+    const [question, setQuestion] = React.useState(obj[0].question);
+    const [answers, setAnswers] = React.useState(obj[0].answer);
 
-    function handleSubmit(){
-        setQuestionNum(prev => {
-            let x = prev+1;
-            setQuestion(props.array[x].question);
-            setAnswers(props.array[x].answer);
-            return x;
-        });
+    console.log(`QuestionNum : ${questionNum}
+    Question: ${question}
+    Answers: ${answers}`)
+
+    function handleClick(){
+            if(count < obj.length){
+            setCount(prev => prev+1);
+            setQuestionNum(obj[count].num);
+            setQuestion(obj[count].question);
+            setAnswers(obj[count].answer);
+            }
     }
-
-    console.log(questionNum);
 
     return(
         <div className="content-container">
-            <h2>QUESTION # {questionNum +1}</h2>
+            <h2>QUESTION # {questionNum}</h2>
             <div>
                 <Question question={question}/>
-                <Answers answers={answers} />
-                <button onClick={handleSubmit}>Submit</button>
-                <button>Clear</button>
+                <Answers answers={answers} handleClick={handleClick}/>
             </div>
         </div>
     )
