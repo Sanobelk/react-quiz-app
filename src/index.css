@@ -36,22 +36,43 @@ body{
 }
 
 .content-container{
-    display:flex;
-    flex-direction:column;
-    background-color:pink;
     width:100%;
     height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.content-container > div{
+    min-width:1000px;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
 }
 
-.content-container > div{
+.content-container > div > div {
     width:100%;
-    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:50px;
 }
 
-.content-container > h2{
-    margin:0;
+.question-container {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.question-container > h3{
+    margin:50px 0px;
+    font-size:26pt;
+    text-align:center;
 }
 
 .answers-container > button{
@@ -61,6 +82,7 @@ body{
     background-color:white;
     padding:5px;
     border-radius:15px;
+    min-width:400px;
 }
 
 .answers-container > button:hover{
@@ -68,7 +90,7 @@ body{
     color:white;
     cursor:pointer;
 }
-.answers-container{
+div > .answers-container{
     display:flex;
     flex-direction:column;
 }
@@ -99,4 +121,19 @@ body{
 .errorText{
     color:Red;
     position:fixed;
+}
+
+.resetButton{
+    font-size:16pt;
+    margin-top:10px;
+    border: 1px solid rgb(73, 140, 255);
+    background-color:white;
+    padding:5px;
+    border-radius:15px;
+    min-width:400px;
+}
+.resetButton:hover{
+    cursor:pointer;
+    background-color:rgb(73,140,255);
+    color:white;
 }

@@ -12,7 +12,6 @@ function Content(props){
     const [quizOver, setQuizOver] = React.useState(false);
     const [numberOfCorr, setNumberOfCorr] = React.useState(0);
 
-    console.log(numberOfCorr);
     function handleClick(event){
         let x = obj[count-1].answer[obj[count-1].correct]
             if(count < obj.length){
@@ -23,17 +22,22 @@ function Content(props){
             setCorrAns(obj[count].correct)
             }
             if(event.target.textContent == x ){
-                alert('you got it');
-                setNumberOfCorr(prev => prev+1);
-            }else{
-                alert('baaap wrong');
+                setNumberOfCorr(prev => prev+1)
             }
-
             if(questionNum == obj.length){
-                alert('woop woop');
                 setQuizOver(true);
             }
             
+    }
+
+    function reset(){
+        setCount(1);
+        setQuestionNum(obj[0].num);
+        setQuestion(obj[0].question);
+        setAnswers(obj[0].answer);
+        setCorrAns(obj[0].correct);
+        setQuizOver(false);
+        setNumberOfCorr(0);
     }
 
     return(
@@ -46,7 +50,10 @@ function Content(props){
             </div>
             </div>
             :
+            <div>
             <h1>You got {numberOfCorr} out of {obj.length}</h1>
+            <button className="resetButton" onClick={reset}>Reset</button>
+            </div>
             }
 
 
