@@ -23,14 +23,14 @@ const questionsarray = [
     },
     {
         num: 3,
-        question: "What ffff",
+        question: "The next letter: `ABCD...`",
         answer:[
-            "Fuck and Suck",
-            "Feed and Seed",
-            "Cope and Rope",
-            "You will never be a woman."
+            "F",
+            "X",
+            "E",
+            "O"
         ],
-        correct: 1
+        correct: 2
     }
 
 ]
