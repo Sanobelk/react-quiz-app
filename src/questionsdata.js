@@ -1,5 +1,6 @@
 const questionsarray = [
     {
+        num: 1,
         question: "What is the Sun?",
         answer:[
             "A star",
@@ -9,6 +10,7 @@ const questionsarray = [
         ]
     },
     {
+        num: 2,
         question: "What does Sneed do?",
         answer:[
             "Feed and Seed",
