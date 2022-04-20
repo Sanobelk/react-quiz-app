@@ -1,8 +1,7 @@
 import React from "react";
 
 function Answers(props){
-
-
+    
     return(
         <div className="answers-container">
             <button onClick={props.handleClick}>{props.answers[0]}</button>
